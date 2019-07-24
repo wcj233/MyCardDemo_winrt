@@ -1,0 +1,10 @@
+import "CardViewModel.idl";
+namespace MyCardDemo2
+{
+    [default_interface]
+    runtimeclass AddCardContentPage : Windows.UI.Xaml.Controls.Page
+    {
+        AddCardContentPage();
+		CardViewModel AddCardTitleVM;
+    }
+}

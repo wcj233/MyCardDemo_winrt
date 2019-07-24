@@ -1,0 +1,15 @@
+import "CardViewModel.idl";
+import "CardModel.idl";
+namespace MyCardDemo2
+{
+    [default_interface]
+
+    runtimeclass SingleCardUserControl : Windows.UI.Xaml.Controls.UserControl
+    {
+        SingleCardUserControl();
+	    CardViewModel CardTitleVM;
+		event Windows.Foundation.EventHandler<CardViewModel> MyDeleteEventHandler;
+		event Windows.Foundation.EventHandler<CardModel> ListViewChangeItemEventHandler;
+		event Windows.Foundation.EventHandler<CardViewModel> ListViewAddItemEventHandler;
+    }
+}

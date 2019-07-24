@@ -1,0 +1,11 @@
+import "CardListViewModel.idl";
+namespace MyCardDemo2
+{
+	[default_interface]
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+		CardListViewModel CardListVM;
+		//MainPage Current{ get; };
+    }
+}

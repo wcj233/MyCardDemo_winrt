@@ -1,0 +1,121 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="MyCardDemo2.SingleCardUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyCardDemo2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="8,4,8,4"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid" Background="Transparent">
+                            <Ellipse Width="20"
+                                     Height="20"
+                                     Fill="LightGray"></Ellipse>
+                            <ContentPresenter x:Name="ContentPresenter" 
+                                              AutomationProperties.AccessibilityView="Raw" 
+                                              BorderBrush="{TemplateBinding BorderBrush}" 
+                                              BorderThickness="{TemplateBinding BorderThickness}" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              ContentTransitions="{TemplateBinding ContentTransitions}"
+                                              Content="{TemplateBinding Content}" 
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Padding="{TemplateBinding Padding}" 
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="colorsListViewItemStyle" TargetType="ListViewItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter 
+                    CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
+                    ContentMargin="{TemplateBinding Padding}" 
+                    CheckMode="Overlay" 
+                    ContentTransitions="{TemplateBinding ContentTransitions}" 
+                    CheckBoxBrush="{ThemeResource SystemControlBackgroundChromeMediumBrush}" 
+                    DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" 
+                    DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
+                    DragBackground="{ThemeResource ListViewItemDragForegroundThemeBrush}" 
+                    />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <local:MyConverter x:Key="FormatConverter"/>
+
+    </UserControl.Resources>
+
+    <Grid Width="330">
+        <StackPanel x:ConnectionId='7' x:Name="BGStackPanel" BorderThickness="1" BorderBrush="LightGray" CornerRadius="4" Height="562" VerticalAlignment="Top" >
+            <RelativePanel Width="330" Height="60" Background="#f6f7f8">
+                <Button x:ConnectionId='16' x:Name="cardContentNum"                                                          Style="{StaticResource ButtonStyle2}" Margin="10,0,0,0" RelativePanel.AlignVerticalCenterWithPanel="True"                             />
+                <TextBlock x:ConnectionId='17' x:Name="cardTitle"                                                     VerticalAlignment="Center" RelativePanel.RightOf="cardContentNum" Margin="10" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Image x:ConnectionId='18' Source="delete.png" x:Name="deleteImage" Width="20" Height="20" RelativePanel.AlignRightWithPanel="True" Margin="0,0,20,0" RelativePanel.AlignVerticalCenterWithPanel="True"                            />
+                <Image x:ConnectionId='19' Source="tianjia.png" x:Name="addImage" RelativePanel.LeftOf="deleteImage" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,20,0" Width="20" Height="20"                           />
+               
+            </RelativePanel>
+
+            <ListView x:ConnectionId='8' x:Name="cardContentListView"                                                         Height="500" Background="#f6f7f8" 
+                      AllowDrop="True" CanReorderItems="True" IsSwipeEnabled="True" SelectionMode="None" 
+                      CanDragItems="True"
+                                                                               
+                                                                                 
+                                                             
+                                                     
+                      ItemContainerStyle="{StaticResource colorsListViewItemStyle}"
+                      IsItemClickEnabled="True">
+
+                <ListView.ItemContainerTransitions>
+                    <TransitionCollection/>
+                </ListView.ItemContainerTransitions>
+                <ListView.ItemTemplate>
+                    <DataTemplate                             >
+                        <Grid x:ConnectionId='10'>
+                            <Canvas HorizontalAlignment="Stretch" Margin="2,8,0,0"></Canvas>
+                            <Grid BorderThickness="1" BorderBrush="LightGray" CornerRadius="4"  Background="White" Margin="0,10,0,0">
+                                <Grid.ContextFlyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:ConnectionId='11' Text="Delete" Icon="Delete"                             />
+                                    </MenuFlyout>
+                                </Grid.ContextFlyout>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                    <ColumnDefinition Width="200"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse x:ConnectionId='12'                                                                                                 Height="10" Width="10" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                                <StackPanel Grid.Column="1" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink">
+                                    <TextBlock x:ConnectionId='13'                              VerticalAlignment="Top" Margin="-5,5,0,0"/>
+                                    <TextBlock x:ConnectionId='14'                               Margin="-5,10,0,10"/>
+                                    <TextBlock x:ConnectionId='15'                                                                                              Margin="-5,0,0,10" Foreground="Gray"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>
+

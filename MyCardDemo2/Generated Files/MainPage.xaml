@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="MyCardDemo2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyCardDemo2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <RelativePanel Height="90" VerticalAlignment="Top" Margin="0,30,0,0">
+            <TextBlock FontSize="40" RelativePanel.AlignLeftWithPanel="True" Margin="20,0,0,0" FontStyle="Italic">Welcome</TextBlock>
+            <TextBlock x:ConnectionId='3' x:Name="showTextBlock" FontSize="17" Text="Add a card" Margin="15,0,30,0" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Button x:ConnectionId='4' x:Name="AddListButton" Width="40" Height="35"                             RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="showTextBlock">
+                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;"/>
+                <FlyoutBase.AttachedFlyout>
+                    <Flyout x:ConnectionId='5' x:Name="addFlyout">
+                        <StackPanel>
+                            <TextBlock Text="Add a list" FontSize="16"/>
+                            <TextBlock Text="Title" FontSize="13" Margin="0,10,10,10"/>
+                            <TextBox x:ConnectionId='6' x:Name="tipTextBox" PlaceholderText="Please enter a title" Margin="0,0,10,10" Width="200" HorizontalAlignment="Left"/>
+                            <TextBlock x:ConnectionId='7' x:Name="tipTextBlock"/>
+                            <Button x:ConnectionId='8' x:Name="sureButton" Content="Sure"                         />
+                        </StackPanel>
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
+
+            </Button>
+        </RelativePanel>
+
+        <StackPanel x:ConnectionId='2' x:Name="CardPanel" Background="White" Margin="0,170,0,0" Orientation="Horizontal" AllowDrop="True">
+
+        </StackPanel>
+
+    </Grid>
+</Page>
+

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="SingleCardUserControl.xaml">
+      <Filter>View</Filter>
+    </Page>
+    <Page Include="AddCardContentPage.xaml">
+      <Filter>View</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="App.idl" />
+    <Midl Include="MainPage.idl" />
+    <Midl Include="CardModel.idl">
+      <Filter>Model</Filter>
+    </Midl>
+    <Midl Include="CardViewModel.idl">
+      <Filter>ViewModel</Filter>
+    </Midl>
+    <Midl Include="MyConverter.idl">
+      <Filter>Model</Filter>
+    </Midl>
+    <Midl Include="CardListViewModel.idl">
+      <Filter>ViewModel</Filter>
+    </Midl>
+    <Midl Include="AddCardContentPage.idl" />
+    <Midl Include="SingleCardUserControl.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="MainPage.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="CardModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CardViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="MyConverter.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CardListViewModel.cpp">
+      <Filter>ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="AddCardContentPage.cpp" />
+    <ClCompile Include="SingleCardUserControl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="MainPage.h" />
+    <ClInclude Include="CardModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="CardViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="MyConverter.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="CardListViewModel.h">
+      <Filter>ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCardContentPage.h" />
+    <ClInclude Include="SingleCardUserControl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\CardDemo-master\CardDemo\Assets\tianjia.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="..\..\CardDemo-master\CardDemo\Assets\delete.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MyCardDemo2_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{01547237-f53a-465f-a045-41eda73210c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ViewModel">
+      <UniqueIdentifier>{2c432d82-130b-4f5f-b645-6ff81c2ca3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{ba7f3c46-a019-4b7d-9a14-da5fc791df14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\WinrtDemo\WinrtDemo\ToastXMLFile.xml" />
+  </ItemGroup>
+</Project>

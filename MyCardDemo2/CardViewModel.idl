@@ -1,0 +1,11 @@
+namespace MyCardDemo2
+{
+	runtimeclass CardViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
+	{
+		String CardId;
+		String HeaderTitle;
+		Windows.Foundation.Collections.IObservableVector<IInspectable> Contents;
+		String Stringify{ get; };
+		Windows.Data.Json.JsonObject ToJsonObject{ get; };
+	}
+}

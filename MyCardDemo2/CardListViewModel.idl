@@ -1,0 +1,8 @@
+namespace MyCardDemo2
+{
+	runtimeclass CardListViewModel
+	{
+		String Stringify{ get; };
+		Windows.Foundation.Collections.IObservableVector<IInspectable> CardLists;
+	}
+}

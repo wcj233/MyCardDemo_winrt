@@ -1,0 +1,13 @@
+namespace MyCardDemo2
+{
+	runtimeclass CardModel
+	{
+		String ToastId;
+		String ContentTitle;
+		String ContentDetail;
+		String AlarmTime;
+		String StatusColor;
+
+		Windows.Data.Json.JsonObject ToJsonObject{ get; };
+	}
+}
